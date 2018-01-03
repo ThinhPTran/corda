@@ -117,12 +117,12 @@ fun Iterable<TransactionSignature>.byKeys() = map { it.by }.toSet()
 
 // Allow Kotlin destructuring:
 // val (private, public) = keyPair
-/* The [PrivateKey] of this [KeyPair] .*/
+/* The [PrivateKey] of this [KeyPair]. */
 operator fun KeyPair.component1(): PrivateKey = this.private
-/* The [PublicKey] of this [KeyPair] .*/
+/* The [PublicKey] of this [KeyPair]. */
 operator fun KeyPair.component2(): PublicKey = this.public
 
-/** A simple wrapper that will make it easier to swap out the EC algorithm we use in future. */
+/** A simple wrapper that will make it easier to swap out the signature algorithm we use in future. */
 fun generateKeyPair(): KeyPair = Crypto.generateKeyPair()
 
 /**
